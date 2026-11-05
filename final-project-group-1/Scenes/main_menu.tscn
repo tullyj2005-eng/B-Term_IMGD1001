@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://ugbc8hmt88p5"]
+
+[ext_resource type="FontFile" uid="uid://ckpxom6pi28k3" path="res://Assets/Fonts/alagard.ttf" id="1_28flt"]
+[ext_resource type="Script" uid="uid://oad7mjsjbbiw" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
+bg_color = Color(0.35, 0.35, 0.35, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2oyk"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.18039216)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28flt"]
+bg_color = Color(0.5409904, 0.54099053, 0.5409904, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.18039216)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
+bg_color = Color(0.76240367, 0.7624037, 0.7624035, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.18039216)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[node name="MainMenu" type="Control" unique_id=1221078256]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48xlc")
+
+[node name="Background" type="Panel" parent="." unique_id=991751665]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_erv1k")
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1533792080]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = -123.0
+offset_right = 203.0
+offset_bottom = 218.48456
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Start" type="Button" parent="Buttons" unique_id=1819011239]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.90359795, 0.9035983, 0.9035982, 1)
+theme_override_colors/font_hover_color = Color(0.09239706, 0.09239707, 0.092397, 1)
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_c2oyk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
+text = "Start Game"
+
+[node name="VersionNotes" type="Button" parent="Buttons" unique_id=1507787618]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.90359795, 0.9035983, 0.9035982, 1)
+theme_override_colors/font_hover_color = Color(0.09239706, 0.09239707, 0.092397, 1)
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_c2oyk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
+text = "Version Notes"
+
+[node name="Credits" type="Button" parent="Buttons" unique_id=882399602]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.90359795, 0.9035983, 0.9035982, 1)
+theme_override_colors/font_hover_color = Color(0.09239706, 0.09239707, 0.092397, 1)
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_c2oyk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
+text = "Credits"
+
+[node name="Label" type="Label" parent="." unique_id=402427166]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -244.0
+offset_right = 144.0
+offset_bottom = -156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3254902)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 72
+text = "[ TITLE ]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/VersionNotes" to="." method="_on_version_notes_pressed"]
+[connection signal="pressed" from="Buttons/Credits" to="." method="_on_credits_pressed"]
