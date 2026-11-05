@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://ckpxom6pi28k3" path="res://Assets/Fonts/alagard.ttf" id="1_28flt"]
 [ext_resource type="Script" uid="uid://oad7mjsjbbiw" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+[ext_resource type="AudioStream" uid="uid://tq7as5jnglwb" path="res://Assets/Music/title theme.mp3" id="3_1ehe0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
 bg_color = Color(0.35, 0.35, 0.35, 1)
@@ -132,6 +133,11 @@ theme_override_font_sizes/font_size = 72
 text = "[ TITLE ]"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1228561255]
+stream = ExtResource("3_1ehe0")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons/VersionNotes" to="." method="_on_version_notes_pressed"]

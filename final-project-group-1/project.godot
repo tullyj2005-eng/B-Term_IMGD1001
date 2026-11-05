@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="Final_Project-Group_1"
-run/main_scene="uid://ugbc8hmt88p5"
+run/main_scene="uid://ctlw677uik0ir"
 config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://boblcyi4imgdo"
 
 [display]
 

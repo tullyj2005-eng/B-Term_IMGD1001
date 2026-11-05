@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://06m6pta3rv3x"
-path="res://.godot/imported/WPI_Logo.png-3930fe0ce55336651ec1d26307f2a8da.ctex"
+uid="uid://bpjpt0cb0fjx0"
+path="res://.godot/imported/WPI_logo.png-c21ab7c494fe06115f09756b012445ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/WPI_Logo.png"
-dest_files=["res://.godot/imported/WPI_Logo.png-3930fe0ce55336651ec1d26307f2a8da.ctex"]
+source_file="res://Assets/WPI_logo.png"
+dest_files=["res://.godot/imported/WPI_logo.png-c21ab7c494fe06115f09756b012445ce.ctex"]
 
 [params]
 
