@@ -1,7 +1,7 @@
 extends Control
 
 func _on_start_pressed() -> void:
-	pass
+	get_tree().change_scene_to_file("res://Scenes/game.tscn")
 
 # when "Version Notes" button is pressed, change scene to the version notes
 func _on_version_notes_pressed() -> void:
