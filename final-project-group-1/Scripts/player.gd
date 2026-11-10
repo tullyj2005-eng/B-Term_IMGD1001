@@ -2,26 +2,28 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -450.0
-var total_jump = 2
+var total_jumps = 2
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
-
+@onready var animated_sprite_wings: AnimatedSprite2D = $AnimatedSprite2D_wings
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
+	# Refill jumps
 	if is_on_floor():
-		total_jump = 2
+		total_jumps = 2
 		
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and (total_jump > 0):
+	# Handle jump
+	if Input.is_action_just_pressed("jump") and (total_jumps > 0):
 		velocity.y = JUMP_VELOCITY
-		total_jump -= 1
-		
-		
+		total_jumps -= 1
+		# Play the wingflap animation behind the player
+		animated_sprite_wings.visible = true
+		animated_sprite_wings.frame = 0
+		animated_sprite_wings.play("wings")
 	
 	# Get the input direction: -1, 0, 1
 	var direction := Input.get_axis("move_left", "move_right")
