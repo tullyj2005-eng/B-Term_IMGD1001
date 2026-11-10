@@ -30,6 +30,10 @@ buses/default_bus_layout="uid://boblcyi4imgdo"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+Player=""
+
 [input]
 
 jump={
