@@ -9,9 +9,7 @@ extends CharacterBody2D
 @onready var ray_left: RayCast2D = $RayCastLeft
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-
 var last_debug := ""
-
 
 func _ready() -> void:
 	ray_right.target_position = Vector2(sight_range, 0)
@@ -20,9 +18,6 @@ func _ready() -> void:
 	ray_left.enabled = true
 	ray_right.add_exception(self)
 	ray_left.add_exception(self)
-
-	
-
 
 
 func _physics_process(delta: float) -> void:
@@ -42,6 +37,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0.0, speed)
  
 	move_and_slide()
+
 
 func find_player() -> Node2D:
 	for ray: RayCast2D in [ray_right, ray_left]:
