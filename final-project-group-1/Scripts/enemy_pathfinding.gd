@@ -46,17 +46,8 @@ func _physics_process(delta: float) -> void:
 func find_player() -> Node2D:
 	for ray: RayCast2D in [ray_right, ray_left]:
 		var hit := ray.get_collider() if ray.is_colliding() else null
-		if debug:
-			show_debug(ray, hit)
 		if hit is Node2D and hit.is_in_group("Player"):
 			return hit
 	return null
  
  
-func show_debug(ray: RayCast2D, hit: Object) -> void:
-	var msg := "%s sees: %s" % [ray.name, hit.name if hit else "nothing"]
-	if hit and not hit.is_in_group("player"):
-		msg += "  (not in 'player' group)"
-	if msg != last_debug:
-		print(msg)
-		last_debug = msg
