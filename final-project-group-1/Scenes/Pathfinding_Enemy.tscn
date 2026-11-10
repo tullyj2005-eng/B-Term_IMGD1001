@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://2nqvrjn83qid"]
+
+[ext_resource type="Script" uid="uid://57peotrdkian" path="res://Scripts/enemy_pathfinding.gd" id="1_o7gj8"]
+[ext_resource type="Texture2D" uid="uid://dlqmoh4qwpmcu" path="res://Assets/Sprites/MC_idle.png" id="2_ph5rn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8dav"]
+atlas = ExtResource("2_ph5rn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmaou"]
+atlas = ExtResource("2_ph5rn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnctv"]
+atlas = ExtResource("2_ph5rn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1mkt"]
+atlas = ExtResource("2_ph5rn")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qr8cm"]
+atlas = ExtResource("2_ph5rn")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le5fb"]
+atlas = ExtResource("2_ph5rn")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hk511"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8dav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmaou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnctv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1mkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qr8cm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_le5fb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hk511"]
+height = 52.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1154192444]
+script = ExtResource("1_o7gj8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=777319011]
+sprite_frames = SubResource("SpriteFrames_hk511")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=15654298]
+position = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_hk511")
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1191668715]
+target_position = Vector2(81, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1870642284]
+target_position = Vector2(-81, 0)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=905637910]

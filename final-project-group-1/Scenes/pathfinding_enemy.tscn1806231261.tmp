@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bl2twjqpuduru"]
+
+[ext_resource type="Texture2D" uid="uid://1u8mnmrljoce" path="res://Assets/sprites/slime_purple.png" id="1_sbbxw"]
+[ext_resource type="Script" uid="uid://ckkj0kwu3pcbq" path="res://Scripts/Enemy_AI.gd" id="2_bsef7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xght5"]
+atlas = ExtResource("1_sbbxw")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_366sv"]
+atlas = ExtResource("1_sbbxw")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02v6p"]
+atlas = ExtResource("1_sbbxw")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibhd0"]
+atlas = ExtResource("1_sbbxw")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hk511"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xght5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_366sv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02v6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibhd0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hk511"]
+radius = 11.401754
+
+[node name="Pathfinding_Enemy" type="Node2D" unique_id=1713688704]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=867596093]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_hk511")
+autoplay = "default"
+frame_progress = 0.78300095
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2113803653]
+script = ExtResource("2_bsef7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1212716084]
+position = Vector2(0, -11)
+shape = SubResource("CircleShape2D_hk511")
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1083046593]
+position = Vector2(0, -9)
+target_position = Vector2(108, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=538885701]
+position = Vector2(0, -9)
+target_position = Vector2(-101, 0)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=160298537]

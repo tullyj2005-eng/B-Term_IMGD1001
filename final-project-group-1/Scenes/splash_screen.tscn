@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctlw677uik0ir"]
 
-[ext_resource type="Texture2D" uid="uid://bpjpt0cb0fjx0" path="res://Assets/WPI_logo.png" id="1_6b1b0"]
+[ext_resource type="Texture2D" uid="uid://bpjpt0cb0fjx0" path="res://Assets/WPI_Logo.png" id="1_6b1b0"]
 [ext_resource type="Script" uid="uid://dhx3p33clgksl" path="res://Scripts/splash_screen.gd" id="1_wwf30"]
 
 [sub_resource type="Animation" id="Animation_wwf30"]
