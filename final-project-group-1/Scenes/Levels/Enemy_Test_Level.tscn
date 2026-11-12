@@ -29,5 +29,5 @@ layer_0/tile_data = PackedInt32Array(-28, 1, 0, 65508, 1, 1, -27, 65537, 0, 6550
 [node name="Player" parent="." unique_id=1318864274 instance=ExtResource("2_5wa6w")]
 position = Vector2(-150, -89)
 
-[node name="Enemy" parent="." unique_id=1154192444 instance=ExtResource("3_mr5l8")]
+[node name="Enemy" parent="." unique_id=1154192444 groups=["Enemy"] instance=ExtResource("3_mr5l8")]
 position = Vector2(325, -48)

@@ -308,8 +308,11 @@ animations = [{
 }],
 "loop": 0,
 "name": &"default",
-"speed": 5.0
+"speed": 16.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hk511"]
+size = Vector2(29, 59)
 
 [node name="Player" type="CharacterBody2D" unique_id=1318864274 groups=["Player"]]
 z_index = 5
@@ -335,7 +338,7 @@ shape = SubResource("CapsuleShape2D_8erm5")
 position = Vector2(0, -23)
 zoom = Vector2(2, 2)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D" unique_id=1560629324]
+[node name="health_bar" type="AnimatedSprite2D" parent="Camera2D" unique_id=1560629324]
 texture_filter = 1
 position = Vector2(0, 142)
 scale = Vector2(5, 3.535)
@@ -350,4 +353,21 @@ focus_mode = 0
 text = "||"
 script = ExtResource("6_x3wgy")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1461503432]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=492749684]
+position = Vector2(-0.5, -27.5)
+shape = SubResource("RectangleShape2D_hk511")
+
+[node name="Timer" type="Timer" parent="." unique_id=211721371]
+wait_time = 0.25
+ignore_time_scale = true
+
+[node name="Timer2" type="Timer" parent="." unique_id=1725523102]
+wait_time = 0.5
+
 [connection signal="pressed" from="Camera2D/Button" to="Camera2D/Button" method="_on_pressed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
