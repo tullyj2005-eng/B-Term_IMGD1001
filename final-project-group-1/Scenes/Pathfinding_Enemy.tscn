@@ -1,30 +1,30 @@
 [gd_scene format=3 uid="uid://2nqvrjn83qid"]
 
-[ext_resource type="Script" uid="uid://57peotrdkian" path="res://Scripts/enemy_pathfinding.gd" id="1_o7gj8"]
-[ext_resource type="Texture2D" uid="uid://dlqmoh4qwpmcu" path="res://Assets/Sprites/MC_idle.png" id="2_ph5rn"]
+[ext_resource type="Script" uid="uid://57peotrdkian" path="res://Scripts/enemy_pathfinding.gd" id="1_sbbxw"]
+[ext_resource type="Texture2D" uid="uid://dlqmoh4qwpmcu" path="res://Assets/Sprites/player_idle.png" id="2_bsef7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e8dav"]
-atlas = ExtResource("2_ph5rn")
+atlas = ExtResource("2_bsef7")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mmaou"]
-atlas = ExtResource("2_ph5rn")
+atlas = ExtResource("2_bsef7")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cnctv"]
-atlas = ExtResource("2_ph5rn")
+atlas = ExtResource("2_bsef7")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1mkt"]
-atlas = ExtResource("2_ph5rn")
+atlas = ExtResource("2_bsef7")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qr8cm"]
-atlas = ExtResource("2_ph5rn")
+atlas = ExtResource("2_bsef7")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_le5fb"]
-atlas = ExtResource("2_ph5rn")
+atlas = ExtResource("2_bsef7")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hk511"]
@@ -49,21 +49,27 @@ animations = [{
 "texture": SubResource("AtlasTexture_le5fb")
 }],
 "loop": 1,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 12.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hk511"]
-height = 52.0
+radius = 9.0
+height = 46.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1154192444]
-script = ExtResource("1_o7gj8")
+[node name="Enemy" type="CharacterBody2D" unique_id=1154192444]
+z_index = 4
+position = Vector2(0, -32)
+script = ExtResource("1_sbbxw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=777319011]
 sprite_frames = SubResource("SpriteFrames_hk511")
+animation = &"idle"
+frame = 4
+frame_progress = 0.9458101
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=15654298]
-position = Vector2(1, 6)
+position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_hk511")
 
 [node name="RayCastRight" type="RayCast2D" parent="." unique_id=1191668715]

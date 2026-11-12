@@ -48,6 +48,18 @@ text = "
 			   Version Notes
 _________________________
 
+Sprint 2:
+
+- Added basic level tiles
+- Added a basic level scene for testing
+- Made it so the “Start” button opens a test level
+- Added player scene with basic movement (walk, jump, double jump)
+- Added player sprites & animations (idle, run, wing jump)
+- Added a basic, temporary player health bar
+- Added basic pathfinding enemy scene which follows the player when they’re nearby
+- Changed the credits to scroll slightly faster
+_________________________
+
 Sprint 1:
 
 - Added WPI splash screen
