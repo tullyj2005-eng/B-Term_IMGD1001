@@ -1,13 +1,16 @@
 extends CharacterBody2D
 
-@export var speed := 60.0
+@export var speed := 150.0
 @export var sight_range := 200.0  
 @export var stop_distance := 6.0   
 @export var debug := true         
- 
+
+
+@onready var pause_button = $Camera2D/Button
 @onready var ray_right: RayCast2D = $RayCastRight
 @onready var ray_left: RayCast2D = $RayCastLeft
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 
 var last_debug := ""
 
@@ -18,6 +21,7 @@ func _ready() -> void:
 	ray_left.enabled = true
 	ray_right.add_exception(self)
 	ray_left.add_exception(self)
+
 
 
 func _physics_process(delta: float) -> void:
@@ -45,5 +49,6 @@ func find_player() -> Node2D:
 		if hit is Node2D and hit.is_in_group("Player"):
 			return hit
 	return null
- 
+	
+	
  
