@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://cpt3cmxfprn83"]
+[gd_scene format=3 uid="uid://cqdrjyd6t6scf"]
 
-[ext_resource type="Texture2D" uid="uid://cqpmdp32e14f0" path="res://Assets/Sprites/Groundtiles.png" id="1_7wf4f"]
+[ext_resource type="Texture2D" uid="uid://cqpmdp32e14f0" path="res://Assets/Sprites/groundtiles.png" id="1_7wf4f"]
 [ext_resource type="PackedScene" uid="uid://p35688kaps4r" path="res://Scenes/player.tscn" id="2_5wa6w"]
-[ext_resource type="PackedScene" uid="uid://2nqvrjn83qid" path="res://Scenes/Pathfinding_Enemy.tscn" id="3_mr5l8"]
+[ext_resource type="PackedScene" uid="uid://2nqvrjn83qid" path="res://Scenes/pathfinding_enemy.tscn" id="3_mr5l8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wgqqc"]
 texture = ExtResource("1_7wf4f")

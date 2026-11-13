@@ -5,7 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dpd8g1m0twgmw" path="res://Assets/Sprites/player_run.png" id="3_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://banjd3xm8uawo" path="res://Assets/Sprites/player_wingflap.png" id="3_vgqql"]
 [ext_resource type="Texture2D" uid="uid://ck2j5fimk4jvi" path="res://Assets/Sprites/health_bar.png" id="5_fkybt"]
-[ext_resource type="Script" uid="uid://wr2jnbyd82or" path="res://Scripts/Pause_Menu.gd" id="6_x3wgy"]
+[ext_resource type="FontFile" uid="uid://ckpxom6pi28k3" path="res://Assets/Fonts/alagard.ttf" id="6_3smsa"]
+[ext_resource type="Script" uid="uid://wr2jnbyd82or" path="res://Scripts/pause_menu.gd" id="6_x3wgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ijsl"]
 atlas = ExtResource("3_vgqql")
@@ -344,9 +345,10 @@ sprite_frames = SubResource("SpriteFrames_hk511")
 [node name="Button" type="Button" parent="Camera2D" unique_id=590443993]
 offset_left = -276.0
 offset_top = -151.0
-offset_right = -250.0
-offset_bottom = -120.0
+offset_right = -248.0
+offset_bottom = -121.0
 focus_mode = 0
+theme_override_fonts/font = ExtResource("6_3smsa")
 text = "||"
 script = ExtResource("6_x3wgy")
 

@@ -10,11 +10,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# Pause menu bellow
-#Currently if you press the space bar it will automatically pause the game
-#by pressing the pause button, this needs to be fixed before the push to git!!
-
-
+# Pause menu below
+# Currently if you press the space bar it will automatically pause the game
+# by pressing the pause button, this needs to be fixed before the push to git!!
 func _on_pressed() -> void:
 	if pause == false:
 		pause = true

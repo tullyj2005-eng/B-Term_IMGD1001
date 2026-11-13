@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gn13ypo3paat"]
 
-[ext_resource type="Texture2D" uid="uid://cqpmdp32e14f0" path="res://Assets/Sprites/Groundtiles.png" id="1_b07c4"]
+[ext_resource type="Texture2D" uid="uid://cqpmdp32e14f0" path="res://Assets/Sprites/groundtiles.png" id="1_b07c4"]
 [ext_resource type="PackedScene" uid="uid://p35688kaps4r" path="res://Scenes/player.tscn" id="2_2ytpj"]
 [ext_resource type="PackedScene" uid="uid://2nqvrjn83qid" path="res://Scenes/pathfinding_enemy.tscn" id="3_2ytpj"]
 
