@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://ckdducp5eawjo" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://dlqmoh4qwpmcu" path="res://Assets/Sprites/player_idle.png" id="2_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dpd8g1m0twgmw" path="res://Assets/Sprites/player_run.png" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://dxmo4iw5eiv0w" path="res://Assets/Sprites/player_jump.png" id="3_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://banjd3xm8uawo" path="res://Assets/Sprites/player_wingflap.png" id="3_vgqql"]
 [ext_resource type="Texture2D" uid="uid://ck2j5fimk4jvi" path="res://Assets/Sprites/health_bar.png" id="5_fkybt"]
 [ext_resource type="FontFile" uid="uid://ckpxom6pi28k3" path="res://Assets/Fonts/alagard.ttf" id="6_3smsa"]
 [ext_resource type="Script" uid="uid://wr2jnbyd82or" path="res://Scripts/pause_menu.gd" id="6_x3wgy"]
+[ext_resource type="AudioStream" uid="uid://d2qtd8jy3q82j" path="res://Assets/Sounds/jump_woosh.mp3" id="8_8erm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ijsl"]
 atlas = ExtResource("3_vgqql")
@@ -65,6 +67,10 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuaoq"]
+atlas = ExtResource("3_f1ek2")
+region = Rect2(128, 0, 64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("2_cvnsp")
 region = Rect2(0, 0, 64, 64)
@@ -89,9 +95,9 @@ region = Rect2(256, 0, 64, 64)
 atlas = ExtResource("2_cvnsp")
 region = Rect2(320, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xuaoq"]
-atlas = ExtResource("2_cvnsp")
-region = Rect2(192, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwi16"]
+atlas = ExtResource("3_f1ek2")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wohnl"]
 atlas = ExtResource("3_6t5aa")
@@ -129,6 +135,14 @@ region = Rect2(448, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_xuaoq")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_cvnsp")
 }, {
 "duration": 1.0,
@@ -152,7 +166,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xuaoq")
+"texture": SubResource("AtlasTexture_xwi16")
 }],
 "loop": 1,
 "name": &"jump",
@@ -328,7 +342,7 @@ animation = &"wings"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1686977217]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_v0iea")
-animation = &"jump"
+animation = &"fall"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=999908917]
@@ -358,7 +372,7 @@ script = ExtResource("6_x3wgy")
 [node name="Area2D" type="Area2D" parent="." unique_id=1461503432]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=492749684]
-position = Vector2(-0.5, -27.5)
+position = Vector2(0, -28)
 shape = SubResource("RectangleShape2D_hk511")
 
 [node name="Timer" type="Timer" parent="." unique_id=211721371]
@@ -367,6 +381,11 @@ ignore_time_scale = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=1725523102]
 wait_time = 0.5
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=214614006]
+stream = ExtResource("8_8erm5")
+pitch_scale = 0.8
+bus = &"SFX"
 
 [connection signal="pressed" from="Camera2D/Button" to="Camera2D/Button" method="_on_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -14,6 +14,7 @@ var target_frame = 0
 @onready var timer: Timer = $Timer
 @onready var health_bar: AnimatedSprite2D = $Camera2D/health_bar
 @onready var timer_2: Timer = $Timer2
+@onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 
 
 func _ready():
@@ -42,6 +43,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_wings.visible = true
 		animated_sprite_wings.frame = 0
 		animated_sprite_wings.play("wings")
+		jump_sound.play()
 	
 	# Get the input direction: -1, 0, 1
 	var direction := Input.get_axis("move_left", "move_right")
@@ -59,7 +61,10 @@ func _physics_process(delta: float) -> void:
 		else:
 			animated_sprite.play("run")
 	else:
-		animated_sprite.play("jump")
+		if velocity.y < 0:
+			animated_sprite.play("jump")
+		else:
+			animated_sprite.play("fall")
 
 	# Apply movement
 	if direction:
