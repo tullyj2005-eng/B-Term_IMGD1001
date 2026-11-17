@@ -90,7 +90,6 @@ func get_health_frame() -> int:
 
 func update_health_bar():
 	if health <= 0:
-		Engine.time_scale = 0.5
 		collision_shape_2d.disabled = true
 		timer_2.start()
 	target_frame = get_health_frame()

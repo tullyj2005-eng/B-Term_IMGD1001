@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed := 150.0
+@export var speed := 100.0
 @export var sight_range := 200.0  
-@export var stop_distance := 6.0   
+@export var stop_distance := 10.0   
 @export var debug := true         
 
 
@@ -27,21 +27,24 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
- 
+
 	var player := find_player()
- 
+
 	if player:
 		var dx := player.global_position.x - global_position.x
-		if abs(dx) > stop_distance:
-			velocity.x = sign(dx) * speed
-			sprite.flip_h = dx < 0.0
-		else:
+		sprite.flip_h = dx < 0.0   # always face the player
+
+		if abs(dx) <= 35:
 			velocity.x = 0.0
+			sprite.play("Attack")
+		else:
+			velocity.x = sign(dx) * speed
+			sprite.play("Running")
 	else:
 		velocity.x = move_toward(velocity.x, 0.0, speed)
- 
-	move_and_slide()
+		sprite.play("Idle")
 
+	move_and_slide()
 
 func find_player() -> Node2D:
 	for ray: RayCast2D in [ray_right, ray_left]:
