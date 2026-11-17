@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6q4vbic12j4o"]
 
-[ext_resource type="Script" uid="uid://d2qpxnk8bdtm3" path="res://Scenes/controls_screen.gd" id="1_hepep"]
+[ext_resource type="Script" uid="uid://d2qpxnk8bdtm3" path="res://Scripts/controls_screen.gd" id="1_hepep"]
 [ext_resource type="FontFile" uid="uid://ckpxom6pi28k3" path="res://Assets/Fonts/alagard.ttf" id="1_xbjqm"]
 
 [node name="ControlsScreen" type="Control" unique_id=183927929]
