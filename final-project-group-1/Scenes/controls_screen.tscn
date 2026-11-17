@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://6q4vbic12j4o"]
+
+[ext_resource type="Script" uid="uid://d2qpxnk8bdtm3" path="res://Scenes/controls_screen.gd" id="1_hepep"]
+[ext_resource type="FontFile" uid="uid://ckpxom6pi28k3" path="res://Assets/Fonts/alagard.ttf" id="1_xbjqm"]
+
+[node name="ControlsScreen" type="Control" unique_id=183927929]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hepep")
+
+[node name="Background" type="ColorRect" parent="." unique_id=59407653]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.34901962, 0.34901962, 0.34901962, 1)
+
+[node name="Title" type="Label" parent="." unique_id=1879734840]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.0
+offset_top = -255.0
+offset_right = 183.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_xbjqm")
+theme_override_font_sizes/font_size = 96
+text = "Controls"
+
+[node name="Controls" type="Label" parent="." unique_id=1902259345]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -111.5
+offset_right = 420.0
+offset_bottom = 137.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_xbjqm")
+theme_override_font_sizes/font_size = 64
+text = "A  -  Move Left
+D  -  Move Right
+Spacebar   -  Jump
+Left Click	  -  Primary Attack"
+
+[node name="EnterStatement" type="Label" parent="." unique_id=215867581]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -115.0
+offset_right = 400.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_xbjqm")
+theme_override_font_sizes/font_size = 48
+text = "Press ENTER to continue."
+horizontal_alignment = 1

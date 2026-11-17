@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://ckpxom6pi28k3" path="res://Assets/Fonts/alagard.ttf" id="1_0ylr1"]
 [ext_resource type="Script" uid="uid://b8ceqll852raf" path="res://Scripts/version_notes.gd" id="2_0ylr1"]
 
-[node name="CreditsScreen" type="Control" unique_id=1345445550]
+[node name="VersionNotes" type="Control" unique_id=1345445550]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

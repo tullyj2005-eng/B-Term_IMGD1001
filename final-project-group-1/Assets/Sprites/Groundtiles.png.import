@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqpmdp32e14f0"
-path="res://.godot/imported/Groundtiles.png-4b6e7a1e3339e0d7db305478135557d9.ctex"
+path="res://.godot/imported/groundtiles.png-872ce4062f54230a62cd8e63dbaa253c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Groundtiles.png"
-dest_files=["res://.godot/imported/Groundtiles.png-4b6e7a1e3339e0d7db305478135557d9.ctex"]
+source_file="res://Assets/Sprites/groundtiles.png"
+dest_files=["res://.godot/imported/groundtiles.png-872ce4062f54230a62cd8e63dbaa253c.ctex"]
 
 [params]
 
