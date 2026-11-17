@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://gn13ypo3paat"]
 
-[ext_resource type="Texture2D" uid="uid://cqpmdp32e14f0" path="res://Assets/Sprites/groundtiles.png" id="1_b07c4"]
+[ext_resource type="Texture2D" uid="uid://cqpmdp32e14f0" path="res://Assets/Sprites/Groundtiles.png" id="1_b07c4"]
 [ext_resource type="PackedScene" uid="uid://p35688kaps4r" path="res://Scenes/player.tscn" id="2_2ytpj"]
-[ext_resource type="PackedScene" uid="uid://2nqvrjn83qid" path="res://Scenes/pathfinding_enemy.tscn" id="3_2ytpj"]
+[ext_resource type="PackedScene" uid="uid://2nqvrjn83qid" path="res://Scenes/Pathfinding_Enemy.tscn" id="3_2ytpj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("1_b07c4")
@@ -26,5 +26,5 @@ layer_0/tile_data = PackedInt32Array(65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1
 
 [node name="Player" parent="." unique_id=1318864274 instance=ExtResource("2_2ytpj")]
 
-[node name="Enemy" parent="." unique_id=1154192444 instance=ExtResource("3_2ytpj")]
+[node name="Enemy" parent="." unique_id=1154192444 groups=["Enemy"] instance=ExtResource("3_2ytpj")]
 position = Vector2(849, -32)
