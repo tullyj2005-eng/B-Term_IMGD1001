@@ -2,11 +2,13 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -450.0
+var input_enabled = true
 var total_jumps = 2
 var in_collider = true
 var health = 100
 var max_health = 100
 var target_frame = 0
+var in_attack = false
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -14,7 +16,9 @@ var target_frame = 0
 @onready var timer: Timer = $Timer
 @onready var health_bar: AnimatedSprite2D = $Camera2D/health_bar
 @onready var timer_2: Timer = $Timer2
+@onready var timer_3: Timer = $Timer3
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
+@onready var animated_sprite_attack1: AnimatedSprite2D = $AnimatedSprite2D_attack1
 
 
 func _ready():
@@ -26,6 +30,7 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
+	move_and_slide()
 	
 	# Add the gravity
 	if not is_on_floor():
@@ -34,7 +39,19 @@ func _physics_process(delta: float) -> void:
 	# Refill jumps
 	if is_on_floor():
 		total_jumps = 2
-		
+	
+	# Apply proper movement for attacks
+	if in_attack == true:
+		if animated_sprite.flip_h == false:
+			velocity.x = -20
+		else:
+			velocity.x = 20
+	
+	# Check if input is enabled; if not, skip all following code
+	if not input_enabled:
+		animated_sprite.play("idle")
+		return
+	
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and (total_jumps > 0):
 		velocity.y = JUMP_VELOCITY
@@ -48,11 +65,26 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction: -1, 0, 1
 	var direction := Input.get_axis("move_left", "move_right")
 	
+	# Handle primary attack
+	if Input.is_action_just_pressed("attack_primary"):
+		# Play the primary attack animation
+		animated_sprite_attack1.visible = true
+		animated_sprite_attack1.frame = 0
+		animated_sprite_attack1.play("attack1")
+		in_attack = true
+		disable_input(1.0)
+	
 	# Flip the sprite
 	if direction > 0:
 		animated_sprite.flip_h = false
+		animated_sprite_wings.flip_h = false
+		animated_sprite_attack1.flip_h = false
+		animated_sprite_attack1.position.x = 27
 	elif direction < 0:
 		animated_sprite.flip_h = true
+		animated_sprite_wings.flip_h = true
+		animated_sprite_attack1.flip_h = true
+		animated_sprite_attack1.position.x = -27
 	
 	# Play animations
 	if is_on_floor():
@@ -65,14 +97,19 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("jump")
 		else:
 			animated_sprite.play("fall")
-
+	
 	# Apply movement
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	move_and_slide()
+
+# If called, user input gets disabled for a period of time "duration"
+func disable_input(duration: float) -> void:
+	input_enabled = false
+	await get_tree().create_timer(duration).timeout
+	input_enabled = true
 
 
 # Health Bar - it should tick down through the animation depending on how much health the player has
@@ -116,7 +153,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
 		in_collider = true
 		timer.start()
-		
+
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	in_collider = false

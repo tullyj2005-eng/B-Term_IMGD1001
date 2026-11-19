@@ -38,15 +38,27 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 72.0
-offset_right = -72.0
+offset_left = 76.0
+offset_right = -76.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("1_0ylr1")
-theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/normal_font_size = 48
 text = "
-			   Version Notes
-_________________________
+			           Version Notes
+_________________________________
+
+Sprint 3:
+
+- Added a basic attack button, which currently just plays an animation and cuts user input
+- Added a jumping animation and sound effect
+- Added a falling animation
+- Added enemy sprites and animations
+- Added the ability to take damage and die
+- Added a pause button (very early implementation)
+- Added a controls screen to explain the controls
+- Changed version notes font size for easier readability
+_________________________________
 
 Sprint 2:
 
@@ -58,7 +70,7 @@ Sprint 2:
 - Added a basic, temporary player health bar
 - Added basic pathfinding enemy scene which follows the player when they’re nearby
 - Changed the credits to scroll slightly faster
-_________________________
+_________________________________
 
 Sprint 1:
 

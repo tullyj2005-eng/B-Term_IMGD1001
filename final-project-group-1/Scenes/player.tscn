@@ -7,12 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://banjd3xm8uawo" path="res://Assets/Sprites/player_wingflap.png" id="3_vgqql"]
 [ext_resource type="Texture2D" uid="uid://ck2j5fimk4jvi" path="res://Assets/Sprites/health_bar.png" id="5_fkybt"]
 [ext_resource type="FontFile" uid="uid://ckpxom6pi28k3" path="res://Assets/Fonts/alagard.ttf" id="6_3smsa"]
-<<<<<<< Updated upstream
+[ext_resource type="Texture2D" uid="uid://wwcmdfjl60u4" path="res://Assets/Sprites/player_attack1.png" id="6_tx1dd"]
 [ext_resource type="Script" uid="uid://wr2jnbyd82or" path="res://Scripts/pause_menu.gd" id="6_x3wgy"]
 [ext_resource type="AudioStream" uid="uid://d2qtd8jy3q82j" path="res://Assets/Sounds/jump_woosh.mp3" id="8_8erm5"]
-=======
-[ext_resource type="Script" uid="uid://wr2jnbyd82or" path="res://Scripts/Pause_Menu.gd" id="6_x3wgy"]
->>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ijsl"]
 atlas = ExtResource("3_vgqql")
@@ -206,6 +203,105 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqm"]
+atlas = ExtResource("6_tx1dd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph33w"]
+atlas = ExtResource("6_tx1dd")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ldla"]
+atlas = ExtResource("6_tx1dd")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7t2e"]
+atlas = ExtResource("6_tx1dd")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmr2m"]
+atlas = ExtResource("6_tx1dd")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax3m3"]
+atlas = ExtResource("6_tx1dd")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vlem"]
+atlas = ExtResource("6_tx1dd")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eeqe"]
+atlas = ExtResource("6_tx1dd")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5x828"]
+atlas = ExtResource("6_tx1dd")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1k8q"]
+atlas = ExtResource("6_tx1dd")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6mvm"]
+atlas = ExtResource("6_tx1dd")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57lvd"]
+atlas = ExtResource("6_tx1dd")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie7r7"]
+atlas = ExtResource("3_vgqql")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywrq3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph33w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ldla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7t2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmr2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax3m3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vlem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eeqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5x828")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1k8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6mvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57lvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie7r7")
+}],
+"loop": 0,
+"name": &"attack1",
+"speed": 12.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8erm5"]
 radius = 9.0
 height = 46.0
@@ -346,13 +442,14 @@ animation = &"wings"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1686977217]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_v0iea")
-<<<<<<< Updated upstream
-animation = &"fall"
-=======
-animation = &"run"
->>>>>>> Stashed changes
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.4326335
+
+[node name="AnimatedSprite2D_attack1" type="AnimatedSprite2D" parent="." unique_id=598113562]
+visible = false
+position = Vector2(27, -32)
+sprite_frames = SubResource("SpriteFrames_ywrq3")
+animation = &"attack1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=999908917]
 position = Vector2(0, -23)
@@ -381,11 +478,7 @@ script = ExtResource("6_x3wgy")
 [node name="Area2D" type="Area2D" parent="." unique_id=1461503432]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=492749684]
-<<<<<<< Updated upstream
-position = Vector2(0, -28)
-=======
 position = Vector2(0, -27.5)
->>>>>>> Stashed changes
 shape = SubResource("RectangleShape2D_hk511")
 
 [node name="Timer" type="Timer" parent="." unique_id=211721371]
@@ -393,6 +486,8 @@ ignore_time_scale = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=1725523102]
 wait_time = 0.5
+
+[node name="Timer3" type="Timer" parent="." unique_id=670659396]
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=214614006]
 stream = ExtResource("8_8erm5")

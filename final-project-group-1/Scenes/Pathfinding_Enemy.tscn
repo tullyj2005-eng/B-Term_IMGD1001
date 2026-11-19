@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://2nqvrjn83qid"]
+[gd_scene format=3 uid="uid://vhuwyy33g27i"]
 
 [ext_resource type="Script" uid="uid://57peotrdkian" path="res://Scripts/enemy_pathfinding.gd" id="1_sbbxw"]
 [ext_resource type="Texture2D" uid="uid://cam3knfytjatw" path="res://Assets/Sprites/golem_resize.png" id="2_o7gj8"]
