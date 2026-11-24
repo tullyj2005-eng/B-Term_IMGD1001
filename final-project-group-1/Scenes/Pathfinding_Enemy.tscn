@@ -231,6 +231,9 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hk511"]
+radius = 386.04663
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hk511"]
 radius = 16.0
 height = 76.0
@@ -245,12 +248,25 @@ scale = Vector2(1.09375, 1.0859375)
 sprite_frames = SubResource("SpriteFrames_hk511")
 animation = &"Attack"
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1745828944]
+
+[node name="Detect_Player" type="CollisionShape2D" parent="Area2D" unique_id=129451782]
+shape = SubResource("CircleShape2D_hk511")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1879719331]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=15654298]
 position = Vector2(-2, -4)
 shape = SubResource("CapsuleShape2D_hk511")
 
 [node name="RayCastRight" type="RayCast2D" parent="." unique_id=1191668715]
-target_position = Vector2(163, 1)
+target_position = Vector2(500, 1)
 
 [node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1870642284]
-target_position = Vector2(-145, -1)
+target_position = Vector2(-500, -1)
+
+[node name="Timer" type="Timer" parent="." unique_id=1116197953]
+ignore_time_scale = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ck2j5fimk4jvi" path="res://Assets/Sprites/health_bar.png" id="5_fkybt"]
 [ext_resource type="FontFile" uid="uid://ckpxom6pi28k3" path="res://Assets/Fonts/alagard.ttf" id="6_3smsa"]
 [ext_resource type="Texture2D" uid="uid://wwcmdfjl60u4" path="res://Assets/Sprites/player_attack1.png" id="6_tx1dd"]
-[ext_resource type="Script" uid="uid://wr2jnbyd82or" path="res://Scripts/pause_menu.gd" id="6_x3wgy"]
+[ext_resource type="Script" uid="uid://wr2jnbyd82or" path="res://Scripts/Pause_Menu.gd" id="6_x3wgy"]
 [ext_resource type="AudioStream" uid="uid://d2qtd8jy3q82j" path="res://Assets/Sounds/jump_woosh.mp3" id="8_8erm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ijsl"]
@@ -486,8 +486,6 @@ ignore_time_scale = true
 
 [node name="Timer2" type="Timer" parent="." unique_id=1725523102]
 wait_time = 0.5
-
-[node name="Timer3" type="Timer" parent="." unique_id=670659396]
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=214614006]
 stream = ExtResource("8_8erm5")
