@@ -18,7 +18,7 @@ var in_attack = false
 @onready var timer_2: Timer = $Timer2
 @onready var timer_3: Timer = $Timer3
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
-@onready var animated_sprite_attack1: AnimatedSprite2D = $AnimatedSprite2D_attack1
+@onready var animated_sprite_attack: AnimatedSprite2D = $AnimatedSprite2D_attack
 
 
 func _ready():
@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Check if input is enabled; if not, skip all following code
 	if not input_enabled:
-		animated_sprite.play("idle")
+		animated_sprite.play("attack")
 		return
 	
 	# Handle jump
@@ -68,9 +68,10 @@ func _physics_process(delta: float) -> void:
 	# Handle primary attack
 	if Input.is_action_just_pressed("attack_primary"):
 		# Play the primary attack animation
-		animated_sprite_attack1.visible = true
-		animated_sprite_attack1.frame = 0
-		animated_sprite_attack1.play("attack1")
+		animated_sprite_attack.visible = true
+		animated_sprite_attack.frame = 0
+		animated_sprite_attack.play("attack_primary")
+		# Put the player in the attack state
 		in_attack = true
 		disable_input(1.0)
 	
@@ -78,13 +79,13 @@ func _physics_process(delta: float) -> void:
 	if direction > 0:
 		animated_sprite.flip_h = false
 		animated_sprite_wings.flip_h = false
-		animated_sprite_attack1.flip_h = false
-		animated_sprite_attack1.position.x = 27
+		animated_sprite_attack.flip_h = false
+		animated_sprite_attack.position.x = 22
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		animated_sprite_wings.flip_h = true
-		animated_sprite_attack1.flip_h = true
-		animated_sprite_attack1.position.x = -27
+		animated_sprite_attack.flip_h = true
+		animated_sprite_attack.position.x = -22
 	
 	# Play animations
 	if is_on_floor():

@@ -37,6 +37,10 @@ shadow_color = Color(0, 0, 0, 0.18039216)
 shadow_size = 5
 shadow_offset = Vector2(0, 3)
 
+[sub_resource type="FontVariation" id="FontVariation_2ytpj"]
+base_font = ExtResource("1_28flt")
+spacing_glyph = 4
+
 [node name="MainMenu" type="Control" unique_id=1221078256]
 layout_mode = 3
 anchors_preset = 15
@@ -62,13 +66,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -199.0
-offset_top = -123.0
-offset_right = 203.0
-offset_bottom = 218.48456
+offset_left = -357.25
+offset_top = -198.0
+offset_right = 357.0
+offset_bottom = 417.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 40
 
 [node name="Start" type="Button" parent="Buttons" unique_id=1819011239]
 layout_mode = 2
@@ -78,7 +82,7 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.90359795, 0.9035983, 0.9035982, 1)
 theme_override_colors/font_hover_color = Color(0.09239706, 0.09239707, 0.092397, 1)
 theme_override_fonts/font = ExtResource("1_28flt")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 96
 theme_override_styles/normal = SubResource("StyleBoxFlat_c2oyk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
@@ -92,7 +96,7 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.90359795, 0.9035983, 0.9035982, 1)
 theme_override_colors/font_hover_color = Color(0.09239706, 0.09239707, 0.092397, 1)
 theme_override_fonts/font = ExtResource("1_28flt")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 96
 theme_override_styles/normal = SubResource("StyleBoxFlat_c2oyk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
@@ -106,31 +110,32 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.90359795, 0.9035983, 0.9035982, 1)
 theme_override_colors/font_hover_color = Color(0.09239706, 0.09239707, 0.092397, 1)
 theme_override_fonts/font = ExtResource("1_28flt")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 96
 theme_override_styles/normal = SubResource("StyleBoxFlat_c2oyk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
 text = "Credits"
 
-[node name="Label" type="Label" parent="." unique_id=402427166]
+[node name="Title" type="Label" parent="." unique_id=402427166]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -144.0
-offset_top = -244.0
-offset_right = 144.0
-offset_bottom = -156.0
+offset_left = -414.0
+offset_top = -415.0
+offset_right = 414.0
+offset_bottom = -235.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.8387847, 0.85022295, 3.85046e-07, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3254902)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 4
-theme_override_fonts/font = ExtResource("1_28flt")
-theme_override_font_sizes/font_size = 72
-text = "[ TITLE ]"
+theme_override_fonts/font = SubResource("FontVariation_2ytpj")
+theme_override_font_sizes/font_size = 176
+text = "SQUELCH"
 horizontal_alignment = 1
 vertical_alignment = 1
 

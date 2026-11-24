@@ -43,10 +43,10 @@ offset_right = -76.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("1_0ylr1")
-theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/normal_font_size = 64
 text = "
-			           Version Notes
-_________________________________
+			                      Version Notes
+____________________________________________
 
 Sprint 3:
 
@@ -58,7 +58,7 @@ Sprint 3:
 - Added a pause button (very early implementation)
 - Added a controls screen to explain the controls
 - Changed version notes font size for easier readability
-_________________________________
+____________________________________________
 
 Sprint 2:
 
@@ -70,7 +70,7 @@ Sprint 2:
 - Added a basic, temporary player health bar
 - Added basic pathfinding enemy scene which follows the player when they’re nearby
 - Changed the credits to scroll slightly faster
-_________________________________
+____________________________________________
 
 Sprint 1:
 
