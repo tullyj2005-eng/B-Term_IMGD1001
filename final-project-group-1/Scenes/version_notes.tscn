@@ -30,7 +30,7 @@ offset_right = 381.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.63, 0.63, 0.63, 1)
 theme_override_fonts/font = ExtResource("1_0ylr1")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = " Press ESC to return to main menu"
 
 [node name="Version_Notes" type="RichTextLabel" parent="." unique_id=733294524]
@@ -38,14 +38,24 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 76.0
-offset_right = -76.0
+offset_left = 73.0
+offset_right = -73.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("1_0ylr1")
 theme_override_font_sizes/normal_font_size = 64
 text = "
 			                      Version Notes
+____________________________________________
+
+Sprint 4:
+
+- Came up with a tentative title for the game
+- Added a player attack animation
+- Added an \"Exit Game\" button to the title screen
+- Added a proper pause menu with \"Resume\" and \"Exit Game\" buttons
+- Changed the game to be the proper resolution and made it auto-fullscreen
+- Made some important technical changes to the player and enemy attacks
 ____________________________________________
 
 Sprint 3:
@@ -64,11 +74,11 @@ Sprint 2:
 
 - Added basic level tiles
 - Added a basic level scene for testing
-- Made it so the “Start” button opens a test level
+- Made it so the \"Start\" button opens a test level
 - Added player scene with basic movement (walk, jump, double jump)
 - Added player sprites & animations (idle, run, wing jump)
 - Added a basic, temporary player health bar
-- Added basic pathfinding enemy scene which follows the player when they’re nearby
+- Added basic pathfinding enemy scene which follows the player when they're nearby
 - Changed the credits to scroll slightly faster
 ____________________________________________
 

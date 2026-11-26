@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://cvut2lxhd6bub"]
+
+[ext_resource type="FontFile" uid="uid://ckpxom6pi28k3" path="res://Assets/Fonts/alagard.ttf" id="1_emv3i"]
+[ext_resource type="Script" uid="uid://b8876bmy1kn3v" path="res://Scenes/pause_menu.gd" id="1_k0w1u"]
+
+[sub_resource type="FontVariation" id="FontVariation_ywrq3"]
+base_font = ExtResource("1_emv3i")
+spacing_glyph = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emv3i"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.18039216)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0w1u"]
+bg_color = Color(0.5409904, 0.54099053, 0.5409904, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.18039216)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1och7"]
+bg_color = Color(0.76240367, 0.7624037, 0.7624035, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.18039216)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[node name="PauseMenu" type="Control" unique_id=1508190001]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k0w1u")
+
+[node name="Title" type="Label" parent="." unique_id=1491596086]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -329.0
+offset_right = 300.0
+offset_bottom = -179.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3254902)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = SubResource("FontVariation_ywrq3")
+theme_override_font_sizes/font_size = 160
+text = "PAUSED"
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=240885091]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.25
+offset_top = -126.0
+offset_right = 357.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Resume" type="Button" parent="Buttons" unique_id=345965239]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.90359795, 0.9035983, 0.9035982, 1)
+theme_override_colors/font_hover_color = Color(0.09239706, 0.09239707, 0.092397, 1)
+theme_override_fonts/font = ExtResource("1_emv3i")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = SubResource("StyleBoxFlat_emv3i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0w1u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1och7")
+text = "Resume"
+
+[node name="ExitGame" type="Button" parent="Buttons" unique_id=547474694]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.90359795, 0.9035983, 0.9035982, 1)
+theme_override_colors/font_hover_color = Color(0.09239706, 0.09239707, 0.092397, 1)
+theme_override_fonts/font = ExtResource("1_emv3i")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = SubResource("StyleBoxFlat_emv3i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k0w1u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1och7")
+text = "Exit Game
+"
+
+[connection signal="pressed" from="Buttons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Buttons/ExitGame" to="." method="_on_exit_game_pressed"]

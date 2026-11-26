@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ctlw677uik0ir"]
 
-[ext_resource type="Texture2D" uid="uid://bpjpt0cb0fjx0" path="res://Assets/WPI_Logo.png" id="1_6b1b0"]
 [ext_resource type="Script" uid="uid://dhx3p33clgksl" path="res://Scripts/splash_screen.gd" id="1_wwf30"]
+[ext_resource type="Texture2D" uid="uid://vvuws5xc1r3h" path="res://Assets/WPI_Logo.png" id="2_wwf30"]
 
 [sub_resource type="Animation" id="Animation_wwf30"]
 length = 0.001
@@ -68,7 +68,7 @@ grow_vertical = 2
 
 [node name="WPI_Logo" type="TextureRect" parent="CenterContainer" unique_id=1954297143]
 layout_mode = 2
-texture = ExtResource("1_6b1b0")
+texture = ExtResource("2_wwf30")
 
 [node name="Fade_Animation" type="AnimationPlayer" parent="." unique_id=1805308752]
 libraries/ = SubResource("AnimationLibrary_hnr0x")

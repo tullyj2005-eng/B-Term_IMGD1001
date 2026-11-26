@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://ck2j5fimk4jvi" path="res://Assets/Sprites/health_bar.png" id="5_fkybt"]
 [ext_resource type="FontFile" uid="uid://ckpxom6pi28k3" path="res://Assets/Fonts/alagard.ttf" id="6_3smsa"]
 [ext_resource type="Texture2D" uid="uid://dufe8bn4n0juq" path="res://Assets/Sprites/player_attack_primary.png" id="6_tx1dd"]
-[ext_resource type="Script" uid="uid://wr2jnbyd82or" path="res://Scripts/pause_menu.gd" id="6_x3wgy"]
+[ext_resource type="Script" uid="uid://wr2jnbyd82or" path="res://Scripts/pause_button.gd" id="6_x3wgy"]
 [ext_resource type="AudioStream" uid="uid://dfw4hjts64dxg" path="res://Assets/Sounds/squelchy_jump.mp3" id="10_tx1dd"]
+[ext_resource type="PackedScene" uid="uid://cvut2lxhd6bub" path="res://Scenes/pause_menu.tscn" id="11_pu2lt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ijsl"]
 atlas = ExtResource("3_vgqql")
@@ -657,15 +658,29 @@ scale = Vector2(5, 3.535)
 sprite_frames = SubResource("SpriteFrames_hk511")
 
 [node name="Button" type="Button" parent="Camera2D" unique_id=590443993]
-offset_left = -300.0
-offset_top = -160.0
-offset_right = -252.0
-offset_bottom = -112.0
+offset_left = -307.0
+offset_top = -167.0
+offset_right = -259.0
+offset_bottom = -119.0
 focus_mode = 0
 theme_override_fonts/font = ExtResource("6_3smsa")
 theme_override_font_sizes/font_size = 32
 text = "||"
 script = ExtResource("6_x3wgy")
+
+[node name="PauseMenu" parent="Camera2D/Button" unique_id=1508190001 instance=ExtResource("11_pu2lt")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 307.0
+offset_top = 167.0
+offset_right = 307.0
+offset_bottom = 167.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.333, 0.333)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1461503432]
 
